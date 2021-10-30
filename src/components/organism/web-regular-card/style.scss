@@ -1,0 +1,14 @@
+.card{
+    height: 100%;
+    --imageHeight: 85%;
+    .card__image{
+        height: var(--imageHeight);
+    }
+    .card__image img{
+        height: 100%;
+    }
+    .card__info{
+        padding-top: 10px;
+        height: calc(100% - var(--imageHeight));
+    }
+}

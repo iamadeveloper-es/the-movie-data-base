@@ -1,3 +1,3 @@
-export default{
-    name: 'web-view-dashboard'
-}
+export default {
+  name: "web-view-dashboard",
+};

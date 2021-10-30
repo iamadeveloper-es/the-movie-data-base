@@ -1,14 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import WebViewHome from "../components/templates/web-view-home";
 
 Vue.use(VueRouter);
 
 const routes = [
-  /* {
+  {
     path: "/",
     name: "Home",
-    component: Home,
-  }, */
+    component: WebViewHome,
+  },
 ];
 
 const router = new VueRouter({

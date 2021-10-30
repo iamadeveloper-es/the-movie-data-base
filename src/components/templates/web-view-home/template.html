@@ -1,0 +1,13 @@
+<div class="home">
+    <web-grid
+    :cols="5"
+    >
+    <web-regular-card
+        v-for="item in popularMovies"
+        :key="item.id"
+        :src="item.poster_path"
+        :altText="item.title"
+        :title="item.title"
+    ></web-regular-card>
+    </web-grid>
+</div>
