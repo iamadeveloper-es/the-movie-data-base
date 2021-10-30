@@ -1,4 +1,4 @@
-import MoviesService from "../../api/services/moviesService.js";
+import MoviesService from "../../api/services/moviesService";
 
 export default {
   methods: {
