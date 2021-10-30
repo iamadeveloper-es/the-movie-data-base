@@ -2,35 +2,36 @@ import MoviesService from "../../api/services/moviesService.js";
 
 export default {
   methods: {
-    getMoviesPopular(){
+    getMoviesPopular() {
       return new Promise((resolve, reject) => {
         return MoviesService.getMoviesPopular()
-                .then(response => resolve(response))
-                .catch(error => reject(error))
-      })
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     },
-    getMoviesTopRated(){
+    getMoviesTopRated() {
       return new Promise((resolve, reject) => {
         return MoviesService.getMoviesTopRated()
-                .then(response => resolve(response))
-                .catch(error => reject(error))
-      })
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     },
-    getMoviesUpComing(){
+    getMoviesUpComing() {
       return new Promise((resolve, reject) => {
         return MoviesService.getMoviesUpComing()
-                .then(response => resolve(response))
-                .catch(error => reject(error))
-      })
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     },
-    getHomeMoviesService(){
+    getHomeMoviesService() {
       const moviesServices = [
-        this.getMoviesPopular(), 
+        this.getMoviesPopular(),
         this.getMoviesTopRated(),
-        this.getMoviesUpComing()
+        this.getMoviesUpComing(),
       ];
-      return Promise.allSettled(moviesServices)
-        .then(responses => responses.map(response => response.value))
-    }
-  }
+      return Promise.allSettled(moviesServices).then((responses) =>
+        responses.map((response) => response.value)
+      );
+    },
+  },
 };

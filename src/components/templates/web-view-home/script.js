@@ -4,61 +4,61 @@ import { mapGetters } from "vuex";
 export default {
   name: "web-view-home",
   components: {
-    WebRegularCard
+    WebRegularCard,
   },
-  mixins: [
-    MixinMoviesService
-  ],
-  data(){
-    return{
+  mixins: [MixinMoviesService],
+  data() {
+    return {
       popularMovies: undefined,
       movies: [
         {
-          type: 'popular',
+          type: "popular",
           data: undefined,
-          label: 'Popular Movies'
+          label: "Popular Movies",
         },
         {
-          type: 'top-rated',
+          type: "top-rated",
           data: undefined,
-          label: 'Top Rated'
+          label: "Top Rated",
         },
         {
-          type: 'up-coming',
+          type: "up-coming",
           data: undefined,
-          label: 'Up Coming'
-        }
-      ]
-    }
+          label: "Up Coming",
+        },
+      ],
+    };
   },
-  created(){
+  created() {
     this.configView();
   },
   methods: {
-    configView(){
-      
-      const homeMoviesList = JSON.parse(JSON.stringify(this.getStoreHomeMovies));
+    configView() {
+      const homeMoviesList = JSON.parse(
+        JSON.stringify(this.getStoreHomeMovies)
+      );
 
-      if(homeMoviesList.length){
+      if (homeMoviesList.length) {
         this.movies.forEach((item, index) => {
           item.data = homeMoviesList[index];
         });
-      }
-      else{
-        this.getHomeMoviesService()
-          .then(response => {
-            this.movies.forEach((item, index) => {
-              item.data = response[index]
-            });
+      } else {
+        this.getHomeMoviesService().then((response) => {
+          this.movies.forEach((item, index) => {
+            item.data = response[index];
+          });
 
-            this.$store.commit('setHomeMovies', JSON.parse(JSON.stringify(response)));
-        })
+          this.$store.commit(
+            "setHomeMovies",
+            JSON.parse(JSON.stringify(response))
+          );
+        });
       }
-    }
+    },
   },
-  computed:{
+  computed: {
     ...mapGetters({
-      getStoreHomeMovies: 'getHomeMovies'
-    })
-  }
+      getStoreHomeMovies: "getHomeMovies",
+    }),
+  },
 };

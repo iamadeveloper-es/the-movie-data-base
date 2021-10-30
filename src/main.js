@@ -4,8 +4,8 @@ import router from "./router";
 import store from "./store";
 
 //Components
-import WebGrid from "@/components/atoms/web-grid"
-import WebSectionTitle from "@/components/atoms/web-section-title"
+import WebGrid from "@/components/atoms/web-grid";
+import WebSectionTitle from "@/components/atoms/web-section-title";
 
 Vue.component("web-grid", WebGrid);
 Vue.component("web-section-title", WebSectionTitle);

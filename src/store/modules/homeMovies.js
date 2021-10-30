@@ -1,16 +1,14 @@
 export default {
-    state: {
-        homeMovies: []
+  state: {
+    homeMovies: [],
+  },
+  getters: {
+    getHomeMovies: (state) => state.homeMovies,
+  },
+  mutations: {
+    setHomeMovies(state, payload) {
+      state.homeMovies = payload;
     },
-    getters: {
-        getHomeMovies: state => state.homeMovies
-    },
-    mutations: {
-        setHomeMovies(state, payload){
-            state.homeMovies = payload;
-        }
-    },
-    actions: {
-
-    }
-}
+  },
+  actions: {},
+};

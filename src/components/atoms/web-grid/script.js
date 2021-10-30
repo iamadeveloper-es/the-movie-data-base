@@ -1,6 +1,6 @@
 export default {
-    name: 'web-grid',
-    props:{
-        cols: Number
-    }
-}
+  name: "web-grid",
+  props: {
+    cols: Number,
+  },
+};

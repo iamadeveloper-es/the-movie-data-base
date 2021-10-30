@@ -1,6 +1,6 @@
 export default {
-    name: 'web-section-title',
-    props: {
-        textTitle: String
-    }
-}
+  name: "web-section-title",
+  props: {
+    textTitle: String,
+  },
+};
