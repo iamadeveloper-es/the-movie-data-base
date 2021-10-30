@@ -1,19 +1,22 @@
 <div class="home">
     <section class="section">
-        <div class="container">
+        <div class="container"
+            v-for="(item, index) in movies"
+            :key="index"
+        >
             <article class="article">
                 <web-section-title
-                    :textTitle="'Popular Movies'"
+                    :textTitle="item.label"
                 ></web-section-title>
                 <web-grid
                     :cols="5"
                 >
                 <web-regular-card
-                    v-for="item in popularMovies"
-                    :key="item.id"
-                    :src="item.poster_path"
-                    :altText="item.title"
-                    :title="item.title"
+                    v-for="movie in item.data"
+                    :key="movie.id"
+                    :src="movie.poster_path"
+                    :altText="movie.title"
+                    :title="movie.title"
                 ></web-regular-card>
                 </web-grid>
             </article>

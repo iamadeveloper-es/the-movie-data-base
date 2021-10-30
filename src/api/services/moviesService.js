@@ -1,15 +1,21 @@
 import Api from "../call/api";
 export default class MoviesService {
-  static getPopular() {
+  static getMoviesPopular() {
     return Api.get("/movie/popular")
             .then(response => response.json())
             .then(data => data.results)
       
   };
-  static getNowPlaying() {
-    return Api.get("/movie/now_playing")
+  static getMoviesTopRated() {
+    return Api.get("/movie/top_rated")
             .then(response => response.json())
             .then(data => data.results)
-      
+
+  };
+  static getMoviesUpComing() {
+    return Api.get("/movie/upcoming")
+            .then(response => response.json())
+            .then(data => data.results)
+
   }
 }

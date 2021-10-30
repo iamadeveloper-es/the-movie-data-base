@@ -2,12 +2,35 @@ import MoviesService from "../../api/services/moviesService.js";
 
 export default {
   methods: {
-    getPopular(){
+    getMoviesPopular(){
       return new Promise((resolve, reject) => {
-        return MoviesService.getPopular()
+        return MoviesService.getMoviesPopular()
                 .then(response => resolve(response))
                 .catch(error => reject(error))
       })
     },
+    getMoviesTopRated(){
+      return new Promise((resolve, reject) => {
+        return MoviesService.getMoviesTopRated()
+                .then(response => resolve(response))
+                .catch(error => reject(error))
+      })
+    },
+    getMoviesUpComing(){
+      return new Promise((resolve, reject) => {
+        return MoviesService.getMoviesUpComing()
+                .then(response => resolve(response))
+                .catch(error => reject(error))
+      })
+    },
+    getHomeMoviesService(){
+      const moviesServices = [
+        this.getMoviesPopular(), 
+        this.getMoviesTopRated(),
+        this.getMoviesUpComing()
+      ];
+      return Promise.allSettled(moviesServices)
+        .then(responses => responses.map(response => response.value))
+    }
   }
 };
