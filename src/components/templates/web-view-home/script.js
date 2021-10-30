@@ -1,12 +1,12 @@
 import WebRegularCard from "@/components/organism/web-regular-card";
-import MixinPopularMoviesService from "@/mixin/services/popularMoviesService";
+import MixinMoviesService from "@/mixin/services/moviesService";
 export default {
   name: "web-view-home",
   components: {
     WebRegularCard
   },
   mixins: [
-    MixinPopularMoviesService
+    MixinMoviesService
   ],
   data(){
     return{
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     configView(){
-      this.getPopularMovies()
+      this.getPopular()
         .then(response => {
           this.popularMovies = response
         })

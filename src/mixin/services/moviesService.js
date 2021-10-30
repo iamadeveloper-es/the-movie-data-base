@@ -1,10 +1,10 @@
-import PopularMoviesService from "../../api/services/popularMoviesService.js";
+import MoviesService from "../../api/services/moviesService.js";
 
 export default {
   methods: {
-    getPopularMovies(){
+    getPopular(){
       return new Promise((resolve, reject) => {
-        return PopularMoviesService.getPopularMovies()
+        return MoviesService.getPopular()
                 .then(response => resolve(response))
                 .catch(error => reject(error))
       })
