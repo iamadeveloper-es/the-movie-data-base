@@ -25,5 +25,12 @@ export default {
         responses.map((response) => response.value)
       );
     },
+    getTVGenres() {
+      return new Promise((resolve, reject) => {
+        return TVShowsService.getTVGenre()
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
+    },
   },
 };

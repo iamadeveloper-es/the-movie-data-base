@@ -33,5 +33,12 @@ export default {
         responses.map((response) => response.value)
       );
     },
+    getMoviesGenres() {
+      return new Promise((resolve, reject) => {
+        return MoviesService.getMoviesGenre()
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
+    },
   },
 };

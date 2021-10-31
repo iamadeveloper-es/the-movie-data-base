@@ -10,4 +10,9 @@ export default class TVShowsService {
       .then((response) => response.json())
       .then((data) => data.results);
   }
+  static getTVGenre() {
+    return Api.get("/genre/tv/list")
+      .then((response) => response.json())
+      .then((data) => data.genres);
+  }
 }

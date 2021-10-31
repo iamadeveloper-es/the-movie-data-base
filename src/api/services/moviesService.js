@@ -15,4 +15,9 @@ export default class MoviesService {
       .then((response) => response.json())
       .then((data) => data.results);
   }
+  static getMoviesGenre() {
+    return Api.get("/genre/movie/list")
+      .then((response) => response.json())
+      .then((data) => data.genres);
+  }
 }
