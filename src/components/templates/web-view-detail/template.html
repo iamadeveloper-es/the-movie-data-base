@@ -7,9 +7,14 @@
         >
             <div class="container">
                 <div class="genre">
-                    <web-list
-                    
-                    ></web-list>
+                    <ul class="genre__ul ul-flex">
+                        <li class="genre__li"
+                            v-for="(item, index) in genres"
+                            :key="index"
+                        >
+                            {{item.name}}
+                        </li>
+                    </ul>
                 </div>
                 <div class="actions">
                     <web-button

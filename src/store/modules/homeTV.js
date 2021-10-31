@@ -5,7 +5,9 @@ export default {
   },
   getters: {
     getHomeTV: (state) => state.homeTV,
-    getTVGenres: (state) => state.tvGenres,
+    getTVGenres: (state) => (ids) => {
+      return state.tvGenres.filter(genre => ids.some(id => id === genre.id))
+    }
   },
   mutations: {
     setHomeTV(state, payload) {

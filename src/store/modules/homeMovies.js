@@ -5,7 +5,9 @@ export default {
   },
   getters: {
     getHomeMovies: (state) => state.homeMovies,
-    getMovieGenres: (state) => state.movieGenres,
+    getMovieGenres: (state) => (ids) => {
+      return state.movieGenres.filter(genre => ids.some(id => id === genre.id))
+    }
   },
   mutations: {
     setHomeMovies(state, payload) {
