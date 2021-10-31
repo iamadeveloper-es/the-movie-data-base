@@ -12,13 +12,13 @@ const routes = [
     component: WebViewHome,
   },
   {
-    path: "tv-shows/detail/:id",
+    path: "/tv-shows/:id",
     name: "tvShows-Detail",
     component: WebViewDetail,
     props: {tvShow: true}
   },
   {
-    path: "movies/detail/:id",
+    path: "/movies/:id",
     name: "movies-Detail",
     component: WebViewDetail,
     props: {tvShow: false}

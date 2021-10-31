@@ -2,6 +2,10 @@ body{
     margin: 0;
     padding: 0;
     @include fontRegular;
+    &.dark-theme{
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
 }
 .container{
     width: 90%;
