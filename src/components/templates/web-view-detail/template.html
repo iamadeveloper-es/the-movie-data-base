@@ -1,0 +1,16 @@
+<div class="detail">
+    <section class="section">
+        <web-hero
+        :src="selectedObject.backdrop_path"
+        :altText="selectedObject.title"
+        :width="'w1280'"
+        >
+            <div class="container">
+                <div class="info">
+                    <p>{{selectedObject.title}}</p>
+                    <p>{{selectedObject.overview}}</p>
+                </div>
+            </div>
+        </web-hero>
+    </section>
+</div>

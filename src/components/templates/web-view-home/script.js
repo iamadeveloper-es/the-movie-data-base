@@ -1,6 +1,7 @@
 import WebRegularCard from "@/components/organism/web-regular-card";
 import MixinMoviesService from "@/mixin/services/moviesService";
 import MixinTVService from "@/mixin/services/tVShowsService";
+import MixinRouterFunctions from "@/mixin/routerFunctions";
 import { mapGetters } from "vuex";
 export default {
   name: "web-view-home",
@@ -9,7 +10,8 @@ export default {
   },
   mixins: [
     MixinMoviesService,
-    MixinTVService
+    MixinTVService,
+    MixinRouterFunctions
   ],
   data() {
     return {
@@ -95,6 +97,9 @@ export default {
           );
         });
       }
+    },
+    goToDetail(route, payload){
+      this.navigate(route, payload);
     }
   },
   computed: {

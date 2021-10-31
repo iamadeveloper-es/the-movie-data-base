@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return `${this.basePath}/${this.width}/${this.src}`;
+      return `${this.basePath}/${this.width}${this.src}`;
     },
   },
 };

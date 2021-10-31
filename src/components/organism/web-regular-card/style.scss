@@ -1,6 +1,9 @@
 .card{
     height: 100%;
     --imageHeight: 85%;
+    &.cursor-pointer{
+        cursor: pointer;
+    }
     .card__image{
         height: var(--imageHeight);
     }

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import WebViewHome from "../components/templates/web-view-home";
+import WebViewDetail from "../components/templates/web-view-detail";
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,18 @@ const routes = [
     path: "/",
     name: "Home",
     component: WebViewHome,
+  },
+  {
+    path: "tv-shows/detail/:id",
+    name: "tvShows-Detail",
+    component: WebViewDetail,
+    props: {tvShow: true}
+  },
+  {
+    path: "movies/detail/:id",
+    name: "movies-Detail",
+    component: WebViewDetail,
+    props: {tvShow: false}
   },
 ];
 

@@ -18,6 +18,8 @@
                     :src="tvShow.poster_path"
                     :altText="tvShow.name"
                     :title="tvShow.name"
+                    :cursorPointer="true"
+                    @Clicked="goToDetail('tvShows-Detail',tvShow)"
                 ></web-regular-card>
                 </web-grid>
             </article>
@@ -42,6 +44,7 @@
                     :src="movie.poster_path"
                     :altText="movie.title"
                     :title="movie.title"
+                    @Clicked="goToDetail('movies-Detail',movie)"
                 ></web-regular-card>
                 </web-grid>
             </article>

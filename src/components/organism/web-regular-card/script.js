@@ -10,5 +10,11 @@ export default {
     width: String,
     altText: String,
     title: String,
+    cursorPointer: Boolean
   },
+  methods: {
+    emmitEvent(event){
+      this.$emit('Clicked', event)
+    }
+  }
 };
