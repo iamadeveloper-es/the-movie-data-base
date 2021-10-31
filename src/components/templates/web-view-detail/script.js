@@ -19,6 +19,7 @@ export default {
         this.getSelectedObject()
     },
     methods: {
+        //FIXME: CONTROLAR SI NO VIENE EL backdrop_path
         getSelectedObject(){
             this.selectedObject = this.$route.params.id
             if(this.tvShow){

@@ -6,8 +6,13 @@
         :width="'w1280'"
         >
             <div class="container">
+                <div class="actions">
+                    <web-button
+                    :btnText="'Ver Trailer'"
+                    ></web-button>
+                </div>
                 <div class="info">
-                    <p>{{selectedObject.title}}</p>
+                    <h2 class="info__title">{{selectedObject.title}}</h2>
                     <p>{{selectedObject.overview}}</p>
                 </div>
             </div>

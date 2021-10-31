@@ -5,8 +5,10 @@ import store from "./store";
 
 //Components
 import WebGrid from "@/components/atoms/web-grid";
+import WebButton from "@/components/atoms/web-button";
 import WebSectionTitle from "@/components/atoms/web-section-title";
 
+Vue.component("web-button", WebButton);
 Vue.component("web-grid", WebGrid);
 Vue.component("web-section-title", WebSectionTitle);
 
