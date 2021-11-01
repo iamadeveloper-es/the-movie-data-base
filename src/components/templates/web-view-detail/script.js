@@ -14,7 +14,8 @@ export default {
     data(){
         return{
             selectedObject: undefined,
-            genres: undefined
+            genres: undefined,
+            isItemList: false
         }
     },
     created(){
@@ -31,9 +32,17 @@ export default {
             }else{
                 this.genres = this.getMovieGenres(genres)
             }
+        },
+        addItemToList(item){
+            this.$store.commit('addUserListItem', item);
+            this.isItemList = true;
+        },
+        deleteItemFromList(item){
+            this.$store.commit('deleteUserListItem', item);
+            this.isItemList = false;
         }
     },
     computed:{
-        ...mapGetters(['getTVGenres', 'getMovieGenres'])
+        ...mapGetters(['getTVGenres', 'getMovieGenres']),
     }
 }

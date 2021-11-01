@@ -21,8 +21,16 @@
                 </div>
                 <div class="actions">
                     <web-icon-action
+                    v-if="!isItemList"
                     :icon="'add'"
                     :iconText="'Añadir a mi lista'"
+                    @Clicked="addItemToList(selectedObject)"
+                    ></web-icon-action>
+                    <web-icon-action
+                    v-else
+                    :icon="'remove'"
+                    :iconText="'Quitar de mi lista'"
+                    @Clicked="deleteItemFromList(selectedObject)"
                     ></web-icon-action>
                     <web-button
                     :btnText="'Ver Trailer'"
