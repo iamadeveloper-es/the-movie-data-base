@@ -1,5 +1,7 @@
 .hero__image{
     position: relative;
+    max-height: 800px;
+    overflow: hidden;
     &::after{
         content: '';
         position: absolute;
