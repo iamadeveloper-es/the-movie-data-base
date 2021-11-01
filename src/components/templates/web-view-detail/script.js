@@ -1,9 +1,11 @@
 import WebHero from "@/components/organism/web-hero";
+import WebItemList from "@/components/organism/web-item-list";
 import { mapGetters } from "vuex";
 export default {
     name: 'web-view-detail',
     components: {
-        WebHero
+        WebHero,
+        WebItemList
     },
     props: {
         tvShow: {
@@ -34,15 +36,20 @@ export default {
             }
         },
         addItemToList(item){
-            this.$store.commit('addUserListItem', item);
+            this.$store.commit("addUserListItem", item);
             this.isItemList = true;
         },
-        deleteItemFromList(item){
-            this.$store.commit('deleteUserListItem', item);
+        deleteItemFromList(id){
+            this.$store.commit("deleteUserListItem", id);
             this.isItemList = false;
         }
     },
     computed:{
-        ...mapGetters(['getTVGenres', 'getMovieGenres']),
+        ...mapGetters([
+            "getTVGenres", 
+            "getMovieGenres", 
+            "isUserListItemExist",
+            "getUserList"
+        ]),
     }
 }

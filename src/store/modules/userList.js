@@ -4,16 +4,21 @@ export default {
     },
     getters: {
       getUserList: state => state.userList,
-      filterItemList: state => id => {
-        return state.userList.filter(item => id.some(idItem => idItem === item))
+      isUserListItemExist: state => id => {
+        return state.userList.some(item => item.id === id);
       }
     },
     mutations: {
       addUserListItem(state, payload){
         state.userList.push(payload)
       },
-      deleteUserListItem(state, index){
-        state.userList.splice(index, 1)
+      deleteUserListItem(state, id){
+        return state.userList.map((item, index) => {
+          console.log(item.id)
+          if(item.id === id){
+            return state.userList.splice(index, 1);
+          }
+        })
       }
     },
     actions: {},

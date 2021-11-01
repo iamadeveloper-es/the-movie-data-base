@@ -1,4 +1,4 @@
-import WebRegularCard from "@/components/organism/web-regular-card";
+import WebItemList from "@/components/organism/web-item-list";
 import MixinMoviesService from "@/mixin/services/moviesService";
 import MixinTVService from "@/mixin/services/tVShowsService";
 import MixinRouterFunctions from "@/mixin/routerFunctions";
@@ -6,7 +6,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "web-view-home",
   components: {
-    WebRegularCard,
+    WebItemList
   },
   mixins: [
     MixinMoviesService,
@@ -105,7 +105,8 @@ export default {
   computed: {
     ...mapGetters({
       getStoreHomeMovies: "getHomeMovies",
-      getStoreTVShows: "getHomeTV"
+      getStoreTVShows: "getHomeTV",
+      userList: "getUserList"
     }),
   },
 };

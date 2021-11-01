@@ -21,7 +21,7 @@
                 </div>
                 <div class="actions">
                     <web-icon-action
-                    v-if="!isItemList"
+                    v-if="!isUserListItemExist(selectedObject.id)"
                     :icon="'add'"
                     :iconText="'Añadir a mi lista'"
                     @Clicked="addItemToList(selectedObject)"
@@ -30,7 +30,7 @@
                     v-else
                     :icon="'remove'"
                     :iconText="'Quitar de mi lista'"
-                    @Clicked="deleteItemFromList(selectedObject)"
+                    @Clicked="deleteItemFromList(selectedObject.id)"
                     ></web-icon-action>
                     <web-button
                     :btnText="'Ver Trailer'"
@@ -41,5 +41,15 @@
                 </div>
             </div>
         </web-hero>
+    </section>
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <web-item-list
+                :items="getUserList"
+                :listTitle="'Mi Lista'"
+                ></web-item-list>
+            </article>
+        </div>
     </section>
 </div>
