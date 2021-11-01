@@ -12,6 +12,7 @@ import WebButton from "@/components/atoms/web-button";
 import WebGrid from "@/components/atoms/web-grid";
 import WebSectionTitle from "@/components/atoms/web-section-title";
 import WebList from "@/components/molecules/web-list";
+import WebIconAction from "@/components/molecules/web-icon-action";
 
 Vue.use(VueMaterial)
 
@@ -20,6 +21,7 @@ Vue.component("web-button", WebButton);
 Vue.component("web-grid", WebGrid);
 Vue.component("web-section-title", WebSectionTitle);
 Vue.component("web-list", WebList);
+Vue.component("web-icon-action", WebIconAction);
 
 Vue.config.productionTip = false;
 

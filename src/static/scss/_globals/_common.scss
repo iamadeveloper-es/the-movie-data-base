@@ -23,4 +23,7 @@ body{
         @include fontExtraLight;
         font-size: 14px;
     }
+    li:first-child{
+        margin-left: 0;
+    }
 }
