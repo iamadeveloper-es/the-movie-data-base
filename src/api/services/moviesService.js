@@ -20,4 +20,9 @@ export default class MoviesService {
       .then((response) => response.json())
       .then((data) => data.genres);
   }
+  static getMovieById(id) {
+    return Api.get(`/movie/${id}`)
+      .then((response) => response.json())
+      .then((data) => data);
+  }
 }

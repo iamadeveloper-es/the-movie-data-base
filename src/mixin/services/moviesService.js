@@ -40,5 +40,12 @@ export default {
           .catch((error) => reject(error));
       });
     },
+    getMovieById(id){
+      return new Promise((resolve, reject) => {
+        return MoviesService.getMovieById(id)
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
+    }
   },
 };

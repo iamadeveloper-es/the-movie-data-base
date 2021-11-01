@@ -21,13 +21,16 @@ export default {
   methods: {
     goToDetail(payload){
       let route = undefined;
-      if(payload.name){
-        route = 'tvShows-Detail'
+      if(this.$route.params.id != payload.id){
+        if(payload.name){
+          route = 'tvShows-Detail'
+        }
+        else{
+          route = 'movies-Detail'
+        }
+        this.navigate(route, payload.id);
       }
-      else{
-        route = 'movies-Detail'
-      }
-      this.navigate(route, payload);
+      
     }
   },
   

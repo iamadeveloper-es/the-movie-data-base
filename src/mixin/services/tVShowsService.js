@@ -32,5 +32,12 @@ export default {
           .catch((error) => reject(error));
       });
     },
+    getTvById(id){
+      return new Promise((resolve, reject) => {
+        return TVShowsService.getTvById(id)
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
+    }
   },
 };

@@ -1,6 +1,7 @@
 <div class="detail">
     <section class="section">
         <web-hero
+        v-if="selectedObject"
         :src="selectedObject.backdrop_path"
         :altText="selectedObject.title"
         :width="'w1280'"
@@ -12,7 +13,7 @@
                 <div class="genre">
                     <ul class="genre__ul ul-flex">
                         <li class="genre__li"
-                            v-for="(item, index) in genres"
+                            v-for="(item, index) in selectedObject.genres"
                             :key="index"
                         >
                             {{item.name}}
@@ -21,7 +22,7 @@
                 </div>
                 <div class="actions">
                     <web-icon-action
-                    v-if="!isUserListItemExist(selectedObject.id)"
+                    v-if="!isUserListItemExistStore(selectedObject.id)"
                     :icon="'add'"
                     :iconText="'Añadir a mi lista'"
                     @Clicked="addItemToList(selectedObject)"
@@ -46,7 +47,7 @@
         <div class="container">
             <article class="article">
                 <web-item-list
-                :items="getUserList"
+                :items="getUserListStore"
                 :listTitle="'Mi Lista'"
                 ></web-item-list>
             </article>

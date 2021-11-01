@@ -1,5 +1,7 @@
 import WebHero from "@/components/organism/web-hero";
 import WebItemList from "@/components/organism/web-item-list";
+import MixinMoviesService from "@/mixin/services/moviesService";
+import MixinTVService from "@/mixin/services/tVShowsService";
 import { mapGetters } from "vuex";
 export default {
     name: 'web-view-detail',
@@ -7,6 +9,10 @@ export default {
         WebHero,
         WebItemList
     },
+    mixins: [
+        MixinMoviesService,
+        MixinTVService
+    ],
     props: {
         tvShow: {
             type: Boolean,
@@ -21,19 +27,43 @@ export default {
         }
     },
     created(){
-        this.getSelectedObject()
+        this.configView()
     },
     methods: {
         //FIXME: CONTROLAR SI NO VIENE EL backdrop_path
-        getSelectedObject(){
+        /* getSelectedObject(){
             this.selectedObject = this.$route.params.id
             const genres = this.selectedObject.genre_ids
             if(this.tvShow){
-                this.genres = this.getTVGenres(genres)
+                this.genres = this.getStoreTvGenres(genres)
                 Object.assign(this.selectedObject, {title: this.selectedObject.name})
             }else{
-                this.genres = this.getMovieGenres(genres)
+                this.genres = this.getStoreMovieGenres(genres)
             }
+        }, */
+        configView(){
+            const id = this.$route.params.id
+            if(this.tvShow){
+                this.tvShowById(id)
+            }
+            else{
+                this.movieById(id)
+            }
+        },
+        tvShowById(id){
+            this.getTvById(id)
+                .then(response => {
+                    this.selectedObject = response
+                    Object.assign(this.selectedObject, {title: this.selectedObject.name})
+                })
+                .catch(() => new Error())
+        },
+        movieById(id){
+            this.getMovieById(id)
+                .then(response => {
+                    this.selectedObject = response
+                })
+                .catch(() => new Error())
         },
         addItemToList(item){
             this.$store.commit("addUserListItem", item);
@@ -45,11 +75,9 @@ export default {
         }
     },
     computed:{
-        ...mapGetters([
-            "getTVGenres", 
-            "getMovieGenres", 
-            "isUserListItemExist",
-            "getUserList"
-        ]),
+        ...mapGetters({
+            isUserListItemExistStore :"isUserListItemExist",
+            getUserListStore: "getUserList"
+        }),
     }
 }

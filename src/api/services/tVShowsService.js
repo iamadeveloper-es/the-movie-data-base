@@ -15,4 +15,9 @@ export default class TVShowsService {
       .then((response) => response.json())
       .then((data) => data.genres);
   }
+  static getTvById(id) {
+    return Api.get(`/tv/${id}`)
+      .then((response) => response.json())
+      .then((data) => data);
+  }
 }
