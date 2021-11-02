@@ -1,0 +1,29 @@
+<header class="web-header">
+    <div class="web-header__button">
+        <div class="container">
+            <web-icon-action
+            :icon="'menu'"
+            @Clicked="menuToggle()"
+            ></web-icon-action>
+        </div>
+    </div>
+    <nav class="web-header-nav"
+        :class="isMenuOpen ? 'web-header-nav-open' : '' "
+    >
+        <ul>
+            <li
+                v-for="(item, index) in items"
+                @click="menuToggle()"
+            >
+                <router-link
+                :to="item.action"
+                >
+                    <web-icon
+                        :icon="item.icon"
+                    ></web-icon>
+                    <div class="label">{{item.label}}</div>
+                </router-link>
+            </li>
+        </ul>
+    </nav>
+</header>
