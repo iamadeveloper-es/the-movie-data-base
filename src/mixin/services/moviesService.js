@@ -46,6 +46,13 @@ export default {
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });
+    },
+    getSimilarMovies(id){
+      return new Promise((resolve, reject) => {
+        return MoviesService.getSimilarMovies(id)
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     }
   },
 };

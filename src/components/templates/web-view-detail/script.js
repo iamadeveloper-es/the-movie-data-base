@@ -21,9 +21,11 @@ export default {
     },
     data(){
         return{
+            serviceError: false,
             selectedObject: undefined,
             genres: undefined,
-            isItemList: false
+            isItemList: false,
+            similarList: undefined,
         }
     },
     created(){
@@ -31,23 +33,15 @@ export default {
     },
     methods: {
         //FIXME: CONTROLAR SI NO VIENE EL backdrop_path
-        /* getSelectedObject(){
-            this.selectedObject = this.$route.params.id
-            const genres = this.selectedObject.genre_ids
-            if(this.tvShow){
-                this.genres = this.getStoreTvGenres(genres)
-                Object.assign(this.selectedObject, {title: this.selectedObject.name})
-            }else{
-                this.genres = this.getStoreMovieGenres(genres)
-            }
-        }, */
         configView(){
             const id = this.$route.params.id
             if(this.tvShow){
-                this.tvShowById(id)
+                this.tvShowById(id);
+                this.similarTV(id);
             }
             else{
-                this.movieById(id)
+                this.movieById(id);
+                this.similarMovies(id);
             }
         },
         tvShowById(id){
@@ -56,14 +50,24 @@ export default {
                     this.selectedObject = response
                     Object.assign(this.selectedObject, {title: this.selectedObject.name})
                 })
-                .catch(() => new Error())
+                .catch(() => this.serviceError = true)
         },
         movieById(id){
             this.getMovieById(id)
                 .then(response => {
                     this.selectedObject = response
                 })
-                .catch(() => new Error())
+                .catch(() => this.serviceError = true)
+        },
+        similarTV(id){
+            this.getSimilarTV(id)
+                .then(response => this.similarList = response)
+                .catch(() => this.serviceError = true)
+        },
+        similarMovies(id){
+            this.getSimilarMovies(id)
+                .then(response => this.similarList = response)
+                .catch(() => this.serviceError = true)
         },
         addItemToList(item){
             this.$store.commit("addUserListItem", item);

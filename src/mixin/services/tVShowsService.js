@@ -38,6 +38,13 @@ export default {
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });
+    },
+    getSimilarTV(id){
+      return new Promise((resolve, reject) => {
+        return TVShowsService.getSimilarTV(id)
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     }
   },
 };
