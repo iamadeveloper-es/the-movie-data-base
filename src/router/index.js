@@ -2,6 +2,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import WebViewHome from "../components/templates/web-view-home";
 import WebViewDetail from "../components/templates/web-view-detail";
+import WebViewSearch from "../components/templates/web-view-search";
+import WebViewMyList from "../components/templates/web-view-my-list";
+import WebViewAllMovies from "../components/templates/web-view-all-movies";
+import WebViewAllTvShows from "../components/templates/web-view-all-tv-shows";
 
 Vue.use(VueRouter);
 
@@ -22,6 +26,26 @@ const routes = [
     name: "movies-Detail",
     component: WebViewDetail,
     props: {tvShow: false}
+  },
+  {
+    path: "/search",
+    name: "search",
+    component: WebViewSearch,
+  },
+  {
+    path: "/my-list",
+    name: "myList",
+    component: WebViewMyList,
+  },
+  {
+    path: "/movies-all",
+    name: "allMovies",
+    component: WebViewAllMovies,
+  },
+  {
+    path: "/tv-shows-all",
+    name: "tvShows",
+    component: WebViewAllTvShows,
   },
 ];
 
