@@ -16,7 +16,7 @@
                 @click="menuToggle()"
             >
                 <router-link
-                :to="item.action"
+                :to="{ name: item.action}"
                 >
                     <web-icon
                         :icon="item.icon"

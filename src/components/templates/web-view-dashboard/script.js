@@ -9,27 +9,27 @@ export default {
       navItems: [
         {
           icon: "search",
-          action: "/search",
+          action: "SEARCH",
           label: "Buscar"
         },
         {
           icon: "home",
-          action: "/",
+          action: "HOME",
           label: "Inicio"
         },
         {
           icon: "inventory",
-          action: "/my-list",
+          action: "MY-LIST",
           label: "Mi Lista"
         },
         {
           icon: "movie_creation",
-          action: "/movies",
+          action: "ALL-MOVIES",
           label: "Películas"
         },
         {
           icon: "ondemand_video",
-          action: "/tv-shows",
+          action: "ALL-TV-SHOWS",
           label: "Series"
         }
       ]
