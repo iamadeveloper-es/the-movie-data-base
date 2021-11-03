@@ -1,10 +1,11 @@
 export default {
   state: {
     homeMovies: [],
-    movieGenres: []
+    movieGenres: [],
   },
   getters: {
     getHomeMovies: (state) => state.homeMovies,
+    getAllmovieGenres: state => state.movieGenres,
     getMovieGenres: (state) => (ids) => {
       return state.movieGenres.filter(genre => ids.some(id => id === genre.id))
     }

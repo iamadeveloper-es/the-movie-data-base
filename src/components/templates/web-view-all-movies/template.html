@@ -1,8 +1,26 @@
-<div class="search">
+<div class="all-movies">
     <section class="section">
         <div class="container">
             <article class="article">
-                
+                <div class="genres">
+                    <web-button
+                        v-for="(item, index) in getAllmovieGenres"
+                        :keys="item.id"
+                        :class="['btn-outlined-white', 'btn-m-2']"
+                        :btnText="item.name"
+                        @Clicked="filterGenre(item.id)"
+                    ></web-button>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <web-item-list
+                :items="movieList"
+                :listTitle="'Películas'"
+                ></web-item-list>
             </article>
         </div>
     </section>

@@ -45,6 +45,13 @@ export default {
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });
+    },
+    getDiscoverTv(){
+      return new Promise((resolve, reject) => {
+        return TVShowsService.getDiscoverTv()
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     }
   },
 };

@@ -53,6 +53,13 @@ export default {
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });
+    },
+    getDiscoverMovies(genre){
+      return new Promise((resolve, reject) => {
+        return MoviesService.getDiscoverMovies(genre)
+          .then((response) => resolve(response))
+          .catch((error) => reject(error));
+      });
     }
   },
 };

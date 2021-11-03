@@ -25,4 +25,9 @@ export default class TVShowsService {
       .then((response) => response.json())
       .then((data) => data.results);
   };
+  static getDiscoverTv() {
+    return Api.get('/discover/tv')
+      .then((response) => response.json())
+      .then((data) => data.results);
+  };
 }

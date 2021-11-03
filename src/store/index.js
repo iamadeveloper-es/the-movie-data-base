@@ -1,8 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import homeMovies from "./modules/homeMovies";
-import homeTV from "./modules/homeTV";
-import userList from "./modules/userList";
+import userData from "./modules/userData";
+import homeMovies from "./modules/services/homeMovies";
+import homeTV from "./modules/services/homeTV";
+import userList from "./modules/services/userList";
 
 Vue.use(Vuex);
 
@@ -11,6 +12,7 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
+    userData,
     homeMovies,
     homeTV,
     userList
