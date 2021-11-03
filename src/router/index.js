@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "HOME",
     component: WebViewHome,
   },
   {
@@ -29,22 +29,22 @@ const routes = [
   },
   {
     path: "/search",
-    name: "search",
+    name: "SEARCH",
     component: WebViewSearch,
   },
   {
     path: "/my-list",
-    name: "myList",
+    name: "MY-LIST",
     component: WebViewMyList,
   },
   {
     path: "/movies-all",
-    name: "allMovies",
+    name: "ALL-MOVIES",
     component: WebViewAllMovies,
   },
   {
     path: "/tv-shows-all",
-    name: "tvShows",
+    name: "ALL-TV-SHOWS",
     component: WebViewAllTvShows,
   },
 ];
