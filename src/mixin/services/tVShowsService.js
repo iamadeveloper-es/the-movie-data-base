@@ -46,9 +46,9 @@ export default {
           .catch((error) => reject(error));
       });
     },
-    getDiscoverTv(){
+    getDiscoverTv(filters){
       return new Promise((resolve, reject) => {
-        return TVShowsService.getDiscoverTv()
+        return TVShowsService.getDiscoverTv(filters)
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });

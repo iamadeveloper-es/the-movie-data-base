@@ -25,8 +25,15 @@ export default class TVShowsService {
       .then((response) => response.json())
       .then((data) => data.results);
   };
-  static getDiscoverTv() {
-    return Api.get('/discover/tv')
+  static getDiscoverTv(filters = {}) {
+    const queryParams = {};
+
+    if(filters){
+      for(let key in filters){
+        Object.assign(queryParams, {[key]: filters[key]})
+      }
+    };
+    return Api.get('/discover/tv', queryParams)
       .then((response) => response.json())
       .then((data) => data.results);
   };

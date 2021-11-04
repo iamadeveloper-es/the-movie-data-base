@@ -4,8 +4,7 @@ import WebViewHome from "../components/templates/web-view-home";
 import WebViewDetail from "../components/templates/web-view-detail";
 import WebViewSearch from "../components/templates/web-view-search";
 import WebViewMyList from "../components/templates/web-view-my-list";
-import WebViewAllMovies from "../components/templates/web-view-all-movies";
-import WebViewAllTvShows from "../components/templates/web-view-all-tv-shows";
+import WebViewAll from "../components/templates/web-view-all";
 
 Vue.use(VueRouter);
 
@@ -40,12 +39,14 @@ const routes = [
   {
     path: "/movies-all",
     name: "ALL-MOVIES",
-    component: WebViewAllMovies,
+    component: WebViewAll,
+    props: {tvShow: false}
   },
   {
-    path: "/tv-shows-all",
-    name: "ALL-TV-SHOWS",
-    component: WebViewAllTvShows,
+    path: "/tv-show-all",
+    name: "ALL-TV",
+    component: WebViewAll,
+    props: {tvShow: true}
   },
 ];
 

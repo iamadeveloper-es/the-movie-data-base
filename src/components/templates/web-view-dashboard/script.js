@@ -29,7 +29,7 @@ export default {
         },
         {
           icon: "ondemand_video",
-          action: "ALL-TV-SHOWS",
+          action: "ALL-TV",
           label: "Series"
         }
       ]

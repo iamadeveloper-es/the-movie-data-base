@@ -54,9 +54,9 @@ export default {
           .catch((error) => reject(error));
       });
     },
-    getDiscoverMovies(genre){
+    getDiscoverMovies(filters){
       return new Promise((resolve, reject) => {
-        return MoviesService.getDiscoverMovies(genre)
+        return MoviesService.getDiscoverMovies(filters)
           .then((response) => resolve(response))
           .catch((error) => reject(error));
       });
