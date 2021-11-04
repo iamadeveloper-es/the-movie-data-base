@@ -5,8 +5,8 @@ import router from "./router";
 import store from "./store";
 
 import VueI18n from 'vue-i18n';
-import { languages } from './i18n/index.js'
-import { defaultLocale } from './i18n/index.js'
+import { languages } from './i18n/locale/index.js'
+import { defaultLocale } from './i18n/locale/index.js'
 import 'vue-material/dist/vue-material.min.css';
 
 const messages = Object.assign(languages);
