@@ -7,11 +7,11 @@ export default {
         disabled: {
             type: Boolean,
             default: false
-        }
+        },
     },
     methods: {
         emitEvent(event){
             this.$emit('Clicked', event)
         }
-    }
+    },
 }

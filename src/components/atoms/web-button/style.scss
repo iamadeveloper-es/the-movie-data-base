@@ -15,4 +15,8 @@
     &.btn-m-2{
         margin: .5rem;
     }
+    &.selected{
+        background-color: var(--text-color);
+        color: var(--bg-color)
+    }
 }

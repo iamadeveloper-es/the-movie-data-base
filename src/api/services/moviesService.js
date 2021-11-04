@@ -30,13 +30,15 @@ export default class MoviesService {
       .then((response) => response.json())
       .then((data) => data.results);
   };
-  static getDiscoverMovies(genres = {}) {
-    const queryParams = {
-      with_genres: ""
-    }
-    if(genres){
-      Object.assign(queryParams, {with_genres: Object.values(genres)})
-    }
+  static getDiscoverMovies(filters = {}) {
+    const queryParams = {};
+
+    if(filters){
+      for(let key in filters){
+        Object.assign(queryParams, {[key]: filters[key]})
+      }
+    };
+
     return Api.get('/discover/movie', queryParams)
       .then((response) => response.json())
       .then((data) => data.results);

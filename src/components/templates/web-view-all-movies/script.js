@@ -27,11 +27,19 @@ export default {
         })
         .catch(() => this.isServiceError = true)
     },
-    filterGenre(id){
+    filterGenre(id, event){
       const payload = {
-        genre: id
+        with_genres: id,
       };
       this.configView(payload);
+      this.colorizeButton(event);
+    },
+    colorizeButton(event){
+      const buttons = document.querySelectorAll(".genres .web-button");
+      buttons.forEach(button => {
+        button.classList.remove('selected');
+      });
+      event.target.classList.add('selected');
     }
   },
   computed:{

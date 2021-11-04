@@ -2,13 +2,14 @@
     <section class="section">
         <div class="container">
             <article class="article">
+                <h3>Buscar por género</h3>
                 <div class="genres">
                     <web-button
                         v-for="(item, index) in getAllmovieGenres"
                         :keys="item.id"
                         :class="['btn-outlined-white', 'btn-m-2']"
                         :btnText="item.name"
-                        @Clicked="filterGenre(item.id)"
+                        @Clicked="filterGenre(item.id, $event)"
                     ></web-button>
                 </div>
             </article>

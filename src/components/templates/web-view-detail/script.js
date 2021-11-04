@@ -1,3 +1,4 @@
+//import {formatDateYYYYMMDD} from "@/utils/dateFunctions";
 import WebHero from "@/components/organism/web-hero";
 import WebItemList from "@/components/organism/web-item-list";
 import MixinMoviesService from "@/mixin/services/moviesService";
@@ -48,6 +49,8 @@ export default {
             this.getTvById(id)
                 .then(response => {
                     this.selectedObject = response
+                    /* this.selectedObject.release_date = formatDateYYYYMMDD(this.selectedObject.release_date)
+                    console.log(this.selectedObject.release_date) */
                     Object.assign(this.selectedObject, {title: this.selectedObject.name})
                 })
                 .catch(() => this.serviceError = true)
@@ -55,7 +58,9 @@ export default {
         movieById(id){
             this.getMovieById(id)
                 .then(response => {
-                    this.selectedObject = response
+                    this.selectedObject = response;
+                    /* this.selectedObject.release_date = formatDateYYYYMMDD(this.selectedObject.release_date)
+                    console.log(this.selectedObject.release_date) */
                 })
                 .catch(() => this.serviceError = true)
         },
