@@ -1,0 +1,23 @@
+.card{
+    height: 100%;
+    --imageHeight: 85%;
+    &.cursor-pointer{
+        cursor: pointer;
+    }
+    .card__image{
+        height: var(--imageHeight);
+        border-radius: 5px;
+        overflow: hidden;
+        &:hover img{
+            transform: scale(1.05);
+        }
+    }
+    .card__image img{
+        height: 100%;
+        transition: all .4s ease-in-out;
+    }
+    .card__info{
+        padding-top: 10px;
+        height: calc(100% - var(--imageHeight));
+    }
+}

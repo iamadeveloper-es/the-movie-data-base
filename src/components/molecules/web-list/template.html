@@ -1,0 +1,14 @@
+<ul
+class="web-list"
+:class="flex ? 'flex' : 'block'"
+>
+    <li class="web-list__li"
+        v-for="(item, index) in items"
+    >
+        <web-link
+        :linkRoute="item.linkRoute"
+        :linkParam="item.linkParam"
+        :linkText="item.linkText"
+        ></web-link>
+    </li>
+</ul>

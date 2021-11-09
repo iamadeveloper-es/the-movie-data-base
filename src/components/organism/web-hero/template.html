@@ -1,0 +1,17 @@
+<div class="hero"
+:class="heroFull ? 'hero-full' : ''"
+>
+    <div class="hero__header">
+        <div class="hero__image">
+            <web-image
+            :basePath="basePath"
+            :src="src"
+            :width="width"
+            :altText="altText"
+            ></web-image>
+        </div>
+        <div class="hero__info">
+            <slot></slot>
+        </div>
+    </div>
+</div>

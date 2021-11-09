@@ -1,0 +1,40 @@
+<div class="home">
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <web-item-list
+                :items="userList"
+                :listTitle="'Mi Lista'"
+                ></web-item-list>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2>Series</h2>
+            <article class="article"
+                v-for="(item, index) in tvShows"
+                :key="index"
+            >
+                <web-item-list
+                :items="item.data"
+                :listTitle="item.label"
+                ></web-item-list>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2>Películas</h2>
+            <article class="article"
+                v-for="(item, index) in movies"
+                :key="index"
+            >
+                <web-item-list
+                :items="item.data"
+                :listTitle="item.label"
+                ></web-item-list>
+            </article>
+        </div>
+    </section>
+</div>

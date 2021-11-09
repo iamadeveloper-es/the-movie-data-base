@@ -1,0 +1,21 @@
+<div class="search">
+    <section class="section"
+    v-if="!getUserList.length"
+    >
+        <div class="container">
+            <h4>Todavía no hay nada en tu lista</h4>
+        </div>
+    </section>
+    <section class="section"
+    v-else
+    >
+        <div class="container">
+            <article class="article">
+                <web-item-list
+                :items="getUserList"
+                :listTitle="'Mi Lista'"
+                ></web-item-list>
+            </article>
+        </div>
+    </section>
+</div>

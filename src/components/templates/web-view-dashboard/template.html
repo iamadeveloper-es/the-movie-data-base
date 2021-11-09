@@ -1,0 +1,10 @@
+<div class="app-wrapper">
+    <web-navbar
+        :items="navItems"
+    ></web-navbar>
+    <main class="main">
+        <div class="dashboard">
+            <router-view :key="$route.path"></router-view>
+        </div>
+    </main>
+</div>

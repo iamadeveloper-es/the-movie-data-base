@@ -1,0 +1,22 @@
+.web-button{
+    padding: 8px 18px;
+    display: inline-block;
+    border: none;
+    border-radius: 3px;
+    @include fontSemiBold;
+    font-size: 16px;
+    cursor: pointer;
+    &.btn-outlined-white{
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 3px;
+    }
+    &.btn-m-2{
+        margin: .5rem;
+    }
+    &.selected{
+        background-color: var(--text-color);
+        color: var(--bg-color)
+    }
+}

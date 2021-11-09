@@ -1,0 +1,16 @@
+<div class="card" 
+    :class="cursorPointer ? 'cursor-pointer' : ''"
+    @click="emmitEvent($event)"
+    >
+    <div class="card__image">
+        <web-image
+        :basePath="basePath"
+        :src="src"
+        :width="width"
+        :altText="altText"
+        ></web-image>
+    </div>
+    <div class="card__info">
+        <span>{{title}}</span>
+    </div>
+</div>

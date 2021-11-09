@@ -1,0 +1,44 @@
+<div class="all-movies">
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <h3>Buscar por género</h3>
+                <div class="genres">
+                    <web-button
+                        v-for="(item, index) in tvShow ? getAllTvGenres : getAllmovieGenres"
+                        :keys="item.id"
+                        :class="['btn-outlined-white', 'btn-m-2']"
+                        :btnText="item.name"
+                        @Clicked="filterGenre(item.id, $event)"
+                    ></web-button>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <web-item-list
+                :items="dataList"
+                :listTitle="tvShow ? 'Series' : 'Películas'"
+                ></web-item-list>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="page-actions">
+                <web-icon-action
+                @Clicked="previousPage()"
+                :icon="'navigate_before'"
+                :iconText="'Anterior'"
+                ></web-icon-action>
+                <web-icon-action
+                @Clicked="nextPage()"
+                :icon="'navigate_next'"
+                :iconText="'Siguiente'"
+                ></web-icon-action>
+            </div>
+        </div>
+    </section>
+</div>

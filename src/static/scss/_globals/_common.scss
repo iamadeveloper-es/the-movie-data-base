@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    @include fontRegular;
+    &.dark-theme{
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+}
+.container{
+    width: 90%;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ul-flex{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    li{
+        margin: 10px;
+        @include fontExtraLight;
+        font-size: 14px;
+    }
+    li:first-child{
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,29 @@
+@mixin fontExtraLight{
+    font-family: var(--font-family);
+    font-weight: var(--extra-light);
+}
+@mixin fontExtraLightItalic{
+    font-family: var(--font-family);
+    font-weight: var(--extra-light);
+    font-style: italic;
+}
+@mixin fontLight{
+    font-family: var(--font-family);
+    font-weight: var(--light);
+}
+@mixin fontRegular{
+    font-family: var(--font-family);
+    font-weight: var(--regular);
+}
+@mixin fontSemiBold{
+    font-family: var(--font-family);
+    font-weight: var(--semi-bold);
+}
+@mixin fontBold{
+    font-family: var(--font-family);
+    font-weight: var(--bold);
+}
+@mixin fontBlack{
+    font-family: var(--font-family);
+    font-weight: var(--black);
+}
