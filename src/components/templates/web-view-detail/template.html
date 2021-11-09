@@ -7,39 +7,41 @@
         :width="'w1280'"
         >
             <div class="container">
-                <div class="title">
-                    <h2 class="info__title">{{selectedObject.title}}</h2>
-                </div>
-                <div class="genre">
-                    <ul class="genre__ul ul-flex">
-                        <li class="genre__li"
-                            v-for="(item, index) in selectedObject.genres"
-                            :key="index"
-                        >
-                            {{item.name}}
-                        </li>
-                    </ul>
-                </div>
-                <div class="actions">
-                    <web-icon-action
-                    v-if="!isUserListItemExistStore(selectedObject.id)"
-                    :icon="'add'"
-                    :iconText="'Añadir a mi lista'"
-                    @Clicked="addItemToList(selectedObject)"
-                    ></web-icon-action>
-                    <web-icon-action
-                    v-else
-                    :icon="'remove'"
-                    :iconText="'Quitar de mi lista'"
-                    @Clicked="deleteItemFromList(selectedObject.id)"
-                    ></web-icon-action>
-                    <web-button
-                    :btnText="'Ver Trailer'"
-                    ></web-button>
-                </div>
-                <div class="info">
-                    <p>{{selectedObject.formatedYear}}</p>
-                    <p>{{selectedObject.overview}}</p>
+                <div class="hero-inner__info">
+                    <div class="title">
+                        <h2 class="info__title">{{selectedObject.title}}</h2>
+                    </div>
+                    <div class="genre">
+                        <ul class="genre__ul ul-flex">
+                            <li class="genre__li"
+                                v-for="(item, index) in selectedObject.genres"
+                                :key="index"
+                            >
+                                {{item.name}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="actions">
+                        <web-icon-action
+                        v-if="!isUserListItemExistStore(selectedObject.id)"
+                        :icon="'add'"
+                        :iconText="'Añadir a mi lista'"
+                        @Clicked="addItemToList(selectedObject)"
+                        ></web-icon-action>
+                        <web-icon-action
+                        v-else
+                        :icon="'remove'"
+                        :iconText="'Quitar de mi lista'"
+                        @Clicked="deleteItemFromList(selectedObject.id)"
+                        ></web-icon-action>
+                        <web-button
+                        :btnText="'Ver Trailer'"
+                        ></web-button>
+                    </div>
+                    <div class="info">
+                        <p>{{selectedObject.formatedYear}}</p>
+                        <p>{{selectedObject.overview}}</p>
+                    </div>
                 </div>
             </div>
         </web-hero>
