@@ -1,3 +1,12 @@
 {
-    "hello": "Hello"
+    "headLines" : {
+        "tvShow" : "TV Shows",
+        "movies" : "Movies",
+        "myList" : "My List"
+    },
+    "subheadLines" : {
+        "popular" : "Popular",
+        "mostVoted" :"Most voted",
+        "comingUp" :"Coming Up"
+    }
 }

@@ -31,8 +31,9 @@ Vue.component("web-icon-action", WebIconAction);
 
 Vue.config.productionTip = false;
 
+
 var i18n = new VueI18n({
-  locale: defaultLocale,
+  locale: localStorage.getItem("lang") || defaultLocale,
   fallbackLocale: 'en',
   messages
 })
