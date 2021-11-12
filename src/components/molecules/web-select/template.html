@@ -1,0 +1,8 @@
+<select @change="setValue" class="web-select" name="web-select" id="web-select">
+    <option
+        v-for="option in options"
+        :selected="option.selected"
+        :disabled="option.disabled"
+        :hidden="option.hidden"
+        :value="option.value">{{option.label}}</option>
+</select>
