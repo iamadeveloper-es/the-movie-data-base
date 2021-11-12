@@ -25,17 +25,17 @@
                         <web-icon-action
                         v-if="!isUserListItemExistStore(selectedObject.id)"
                         :icon="'add'"
-                        :iconText="'Añadir a mi lista'"
+                        :iconText="$t('myList.addToList')"
                         @Clicked="addItemToList(selectedObject)"
                         ></web-icon-action>
                         <web-icon-action
                         v-else
                         :icon="'remove'"
-                        :iconText="'Quitar de mi lista'"
+                        :iconText="$t('myList.removeFromList')"
                         @Clicked="deleteItemFromList(selectedObject.id)"
                         ></web-icon-action>
                         <web-button
-                        :btnText="'Ver Trailer'"
+                        :btnText="$t('buttons.watchTrailer')"
                         ></web-button>
                     </div>
                     <div class="info">
@@ -51,7 +51,7 @@
             <article class="article">
                 <web-item-list
                 :items="getUserListStore"
-                :listTitle="'Mi Lista'"
+                :listTitle="$t('headLines.myList')"
                 ></web-item-list>
             </article>
         </div>
@@ -61,7 +61,7 @@
             <article class="article">
                 <web-item-list
                 :items="similarList"
-                :listTitle="'Relacionadas'"
+                :listTitle="$t('subheadLines.related')"
                 ></web-item-list>
             </article>
         </div>

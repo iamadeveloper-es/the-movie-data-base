@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container">
             <article class="article">
-                <h3>Buscar por género</h3>
+                <h3>{{$t('generalText.searchByGenre')}}</h3>
                 <div class="genres">
                     <web-button
                         v-for="(item, index) in tvShow ? getAllTvGenres : getAllmovieGenres"
@@ -20,7 +20,7 @@
             <article class="article">
                 <web-item-list
                 :items="dataList"
-                :listTitle="tvShow ? 'Series' : 'Películas'"
+                :listTitle="tvShow ? $t('headLines.tvShow') : $t('headLines.movies')"
                 ></web-item-list>
             </article>
         </div>
@@ -31,12 +31,12 @@
                 <web-icon-action
                 @Clicked="previousPage()"
                 :icon="'navigate_before'"
-                :iconText="'Anterior'"
+                :iconText="$t('buttons.previous')"
                 ></web-icon-action>
                 <web-icon-action
                 @Clicked="nextPage()"
                 :icon="'navigate_next'"
-                :iconText="'Siguiente'"
+                :iconText="$t('buttons.next')"
                 ></web-icon-action>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default {
             selectOptions: [
                 {
                     value: "",
-                    label: "Lenguaje",
+                    label: this.$t('menu.lang'),
                     selected: false,
                     disabled: false,
                     hidden: true

@@ -10,27 +10,27 @@ export default {
         {
           icon: "search",
           action: "SEARCH",
-          label: "Buscar"
+          label: this.$t('menu.search')
         },
         {
           icon: "home",
           action: "HOME",
-          label: "Inicio"
+          label: this.$t('menu.home')
         },
         {
           icon: "inventory",
           action: "MY-LIST",
-          label: "Mi Lista"
+          label: this.$t('menu.myList')
         },
         {
           icon: "movie_creation",
           action: "ALL-MOVIES",
-          label: "Películas"
+          label: this.$t('menu.movies')
         },
         {
           icon: "ondemand_video",
           action: "ALL-TV",
-          label: "Series"
+          label: this.$t('menu.tvShow')
         }
       ]
     }

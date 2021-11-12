@@ -1,4 +1,12 @@
 {
+    "menu" : {
+        "search" : "Search",
+        "home" : "Home",
+        "tvShow" : "TV Shows",
+        "movies" : "Movies",
+        "myList" : "My List",
+        "lang" : "lang"
+    },
     "headLines" : {
         "tvShow" : "TV Shows",
         "movies" : "Movies",
@@ -7,6 +15,20 @@
     "subheadLines" : {
         "popular" : "Popular",
         "mostVoted" :"Most voted",
-        "comingUp" :"Coming Up"
+        "comingUp" :"Coming Up",
+        "related" : "Related"
+    },
+    "myList":{
+        "noListItems" : "Nothing yet on your list",
+        "addToList" : "Add to your list",
+        "removeFromList" : "Remove from my list"
+    },
+    "buttons": {
+        "watchTrailer" : "Watch Trailer",
+        "previous" : "Previous",
+        "next" : "Next"
+    },
+    "generalText" :{
+        "searchByGenre" : "Search by genre"
     }
 }
