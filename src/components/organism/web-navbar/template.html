@@ -25,5 +25,9 @@
                 </router-link>
             </li>
         </ul>
+        <web-select
+            @EmitValue="setLang($event)"
+            :options="selectOptions"
+        ></web-select>
     </nav>
 </header>

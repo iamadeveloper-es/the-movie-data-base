@@ -19,29 +19,29 @@ export default {
         {
           type: "popular",
           data: undefined,
-          label: "Populares",
+          label: this.$t('subheadLines.popular')
         },
         {
           type: "top-rated",
           data: undefined,
-          label: "Más votadas",
+          label: this.$t('subheadLines.mostVoted'),
         },
       ],
       movies: [
         {
           type: "popular",
           data: undefined,
-          label: "Popular",
+          label: this.$t('subheadLines.popular'),
         },
         {
           type: "top-rated",
           data: undefined,
-          label: "Más votadas",
+          label: this.$t('subheadLines.mostVoted'),
         },
         {
           type: "up-coming",
           data: undefined,
-          label: "Próximamente",
+          label: this.$t('subheadLines.comingUp'),
         },
       ],
     };

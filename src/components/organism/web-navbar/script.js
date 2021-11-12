@@ -1,8 +1,10 @@
 import WebIcon from "@/components/atoms/web-icon";
+import WebSelect from "@/components/molecules/web-select";
 export default {
     name: 'web-navbar',
     components: {
-        WebIcon
+        WebIcon,
+        WebSelect
     },
     props: {
         items: Array,
@@ -10,12 +12,41 @@ export default {
     },
     data(){
         return{
-            isMenuOpen: false
+            isMenuOpen: false,
+            selectOptions: [
+                {
+                    value: "",
+                    label: "Lenguaje",
+                    selected: false,
+                    disabled: false,
+                    hidden: true
+                },
+                {
+                    value: "es",
+                    label: "Es",
+                    selected: false,
+                    disabled: false,
+                    hidden: false
+                },
+                {
+                    value: "en",
+                    label: "En",
+                    selected: false,
+                    disabled: false,
+                    hidden: false
+                }
+            ]
         }
     },
     methods:{
         menuToggle(){
-            this.isMenuOpen = ! this.isMenuOpen
+            this.isMenuOpen = ! this.isMenuOpen;
+        },
+        setLang(event){
+            const lang = event.target.value;
+            console.log(lang)
+            localStorage.setItem("lang", lang);
+            window.location.reload();
         }
     }
     
