@@ -29,6 +29,8 @@
         "next" : "Next"
     },
     "generalText" :{
-        "searchByGenre" : "Search by genre"
+        "searchByGenre" : "Search by genre",
+        "minutes" : "min",
+        "seasons" : "Seasons"
     }
 }

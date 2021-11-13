@@ -30,6 +30,8 @@
         "next" : "Siguiente"
     },
     "generalText" :{
-        "searchByGenre" : "Buscar por género"
+        "searchByGenre" : "Buscar por género",
+        "minutes" : "min",
+        "seasons" : "Temporadas"
     }
 }

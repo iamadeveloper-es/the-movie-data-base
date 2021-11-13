@@ -43,7 +43,11 @@
                         ></web-rating>
                     </div>
                     <div class="info">
-                        <p>{{selectedObject.formatedYear}}</p>
+                        <div class="inner__info">
+                            <span>{{selectedObject.formatedYear}}</span>
+                            <span v-if="!tvShow" class="runtime">{{selectedObject.runtime}} <small>{{$t('generalText.minutes')}}</small></span>
+                            <span v-if="tvShow" class="runtime"><small>{{$t('generalText.seasons')}}</small> {{selectedObject.number_of_seasons}}</span>
+                        </div>
                         <p>{{selectedObject.overview}}</p>
                     </div>
                 </div>
