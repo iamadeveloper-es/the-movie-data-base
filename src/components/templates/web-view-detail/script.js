@@ -1,6 +1,7 @@
 import {getYear} from "@/utils/dateFunctions";
 import WebHero from "@/components/organism/web-hero";
 import WebItemList from "@/components/organism/web-item-list";
+import WebRating from "@/components/organism/web-rating";
 import MixinMoviesService from "@/mixin/services/moviesService";
 import MixinTVService from "@/mixin/services/tVShowsService";
 import { mapGetters } from "vuex";
@@ -8,7 +9,8 @@ export default {
     name: 'web-view-detail',
     components: {
         WebHero,
-        WebItemList
+        WebItemList,
+        WebRating
     },
     mixins: [
         MixinMoviesService,

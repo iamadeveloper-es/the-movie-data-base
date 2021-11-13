@@ -38,6 +38,9 @@
                         <web-button
                         :btnText="$t('buttons.watchTrailer')"
                         ></web-button>
+                        <web-rating
+                        :average="selectedObject.vote_average"
+                        ></web-rating>
                     </div>
                     <div class="info">
                         <p>{{selectedObject.formatedYear}}</p>
