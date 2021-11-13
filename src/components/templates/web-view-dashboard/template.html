@@ -4,7 +4,9 @@
     ></web-navbar>
     <main class="main">
         <div class="dashboard">
-            <router-view :key="$route.path"></router-view>
+            <transition name="slide-fade" mode="out-in">
+                <router-view :key="$route.path"></router-view>
+            </transition>
         </div>
     </main>
 </div>
