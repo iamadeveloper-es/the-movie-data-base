@@ -6,6 +6,7 @@ export default {
       default: "https://image.tmdb.org/t/p",
     },
     src: String,
+    fallBackImg: String,
     width: {
       type: String,
       default: "w300",
@@ -14,7 +15,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return `${this.basePath}/${this.width}${this.src}`;
+      return this.src === null ? require(`@/static/assets/${this.fallBackImg}`)  : `${this.basePath}/${this.width}/${this.src}`;
     },
   },
 };

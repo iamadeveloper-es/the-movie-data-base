@@ -3,6 +3,7 @@
         <web-hero
         v-if="selectedObject"
         :src="selectedObject.backdrop_path"
+        :fallBackImg="'poster-not-found.jpg'"
         :altText="selectedObject.title"
         :width="'w1280'"
         >

@@ -7,6 +7,7 @@ export default {
     props:{
         basePath: String,
         src: String,
+        fallBackImg: String,
         width: String,
         altText: String,
         heroFull: {
