@@ -24,10 +24,15 @@
                     <div class="label">{{item.label}}</div>
                 </router-link>
             </li>
+            <li class="language">
+                <web-icon
+                    :icon="'language'"
+                ></web-icon>
+                <web-select
+                    @EmitValue="setLang($event)"
+                    :options="selectOptions"
+                ></web-select>
+            </li>
         </ul>
-        <web-select
-            @EmitValue="setLang($event)"
-            :options="selectOptions"
-        ></web-select>
     </nav>
 </header>

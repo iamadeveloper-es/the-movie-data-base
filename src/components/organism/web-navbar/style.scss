@@ -43,6 +43,12 @@
             text-decoration: none;
         }
     }
+    .language{
+        text-align: center;
+    }
+    .language .web-select{
+        margin-top: 5px;
+    }
 }
 
 @media screen and(min-width: 1200px){
@@ -73,6 +79,18 @@
             position: absolute;
             left: 42px;
             margin-left: 15px;
+        }
+        .language{
+            display: flex;
+            align-items: center;
+        }
+        .language span{
+            padding-left: 5px;
+        }
+        .language .web-select{
+            position: absolute;
+            left: 65px;
+            margin-top: 0;
         }
     }
 }

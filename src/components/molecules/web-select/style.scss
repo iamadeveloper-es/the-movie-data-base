@@ -2,4 +2,16 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    cursor: pointer;
+    option{
+        --text-color: var(--bg-color);
+        color: var(--text-color);
+    }
 }
