@@ -34,7 +34,7 @@ Vue.config.productionTip = false;
 
 var i18n = new VueI18n({
   locale: localStorage.getItem("lang") || defaultLocale,
-  fallbackLocale: 'en',
+  fallbackLocale: 'en-UK',
   messages
 })
 

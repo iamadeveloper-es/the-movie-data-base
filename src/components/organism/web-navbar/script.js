@@ -22,14 +22,14 @@ export default {
                     hidden: true
                 },
                 {
-                    value: "es",
+                    value: "es-ES",
                     label: "Es",
                     selected: false,
                     disabled: false,
                     hidden: false
                 },
                 {
-                    value: "en",
+                    value: "en-UK",
                     label: "En",
                     selected: false,
                     disabled: false,
