@@ -1,3 +1,4 @@
+import WebLogo from "@/components/atoms/web-logo";
 import WebItemList from "@/components/organism/web-item-list";
 import MixinMoviesService from "@/mixin/services/moviesService";
 import MixinTVService from "@/mixin/services/tVShowsService";
@@ -6,6 +7,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "web-view-home",
   components: {
+    WebLogo,
     WebItemList
   },
   mixins: [
