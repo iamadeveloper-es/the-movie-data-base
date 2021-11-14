@@ -2,7 +2,21 @@
     <section class="section">
         <div class="container">
             <article class="article">
-                
+                <web-filters
+                :filters="filtersData"
+                @SearchValue="searchValue($event)"
+                ></web-filters>
+            </article>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="headline-2">{{filteredItems.data != undefined ? `${$t('forms.results')}: ${filteredItems.data.length}` : $t('forms.noResults')}}</h2>
+            <article class="article">
+                <web-item-list
+                :items="filteredItems.data"
+                :listTitle="filteredItems.label"
+                ></web-item-list>
             </article>
         </div>
     </section>

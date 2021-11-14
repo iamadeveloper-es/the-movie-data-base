@@ -1,0 +1,17 @@
+<div class="web-filters">
+    <div class="web-filters-container">
+        <div
+        v-for="(filter, index) in filters"
+        :key="index"
+        >
+            <web-input-search 
+            v-if="filter.filterType === 'input'"
+            :type="filter.type"
+            :placeholder="filter.placeholder"
+            :label="filter.label"
+            @EmitValue="searchValue($event)"
+            >
+            </web-input-search>
+        </div>
+    </div>
+</div>

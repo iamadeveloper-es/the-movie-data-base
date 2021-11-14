@@ -33,5 +33,11 @@
         "searchByGenre" : "Buscar por género",
         "minutes" : "min",
         "seasons" : "Temporadas"
+    },
+    "forms":{
+        "search": "Buscar",
+        "searchByName": "Buscar por nombre",
+        "results" :"Resultados",
+        "noResults" :"No hay busquedas"
     }
 }

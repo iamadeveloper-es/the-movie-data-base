@@ -1,0 +1,11 @@
+<fieldset class="web-fieldset">
+    <label
+    class="web-label"
+    for="">{{label}}</label>
+    <input
+    class="web-input web-input-search"
+    :type="type"
+    :placeholder="placeholder"
+    @input.keyup="emitValue"
+    >
+</fieldset>

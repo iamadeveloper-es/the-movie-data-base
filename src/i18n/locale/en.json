@@ -32,5 +32,11 @@
         "searchByGenre" : "Search by genre",
         "minutes" : "min",
         "seasons" : "Seasons"
+    },
+    "forms":{
+        "search": "Search",
+        "searchByName": "Search by name",
+        "results" :"Resultados",
+        "noResults" :"No results"
     }
 }

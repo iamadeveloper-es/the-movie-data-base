@@ -1,0 +1,16 @@
+.web-fieldset{
+    border: none;
+}
+.web-label{
+    display: block;
+    margin-bottom: 5px;
+}
+.web-input{
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
