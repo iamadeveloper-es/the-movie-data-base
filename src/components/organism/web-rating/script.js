@@ -4,7 +4,10 @@ export default {
     average: Number
   },
   mounted(){
-    this.setProgress()
+    if(this.average){
+      this.setProgress();
+    }
+    
   },
   methods: {
     setProgress(){
