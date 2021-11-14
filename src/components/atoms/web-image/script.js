@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return this.src === null ? require(`@/static/assets/${this.fallBackImg}`)  : `${this.basePath}/${this.width}/${this.src}`;
+      return this.src === null || !this.src ? require(`@/static/assets/${this.fallBackImg}`)  : `${this.basePath}/${this.width}/${this.src}`;
     },
   },
 };
