@@ -14,7 +14,6 @@ export default {
     return {
       filteredItems: {
         data: undefined,
-        label: "título"
       },
       serviceError: false,
       filtersData: [
@@ -46,8 +45,8 @@ export default {
     
   },
   computed: {
-    filterData(){
-      return
+    setTitle(){
+      return this.filteredItems.data != undefined ? `${this.$t('forms.results')}: ${this.filteredItems.data.length}` : this.$t('forms.noResults')
     }
   },
 };

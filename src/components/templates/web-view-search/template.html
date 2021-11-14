@@ -11,11 +11,10 @@
     </section>
     <section class="section">
         <div class="container">
-            <h2 class="headline-2">{{filteredItems.data != undefined ? `${$t('forms.results')}: ${filteredItems.data.length}` : $t('forms.noResults')}}</h2>
+            <h2 class="headline-2">{{setTitle}}</h2>
             <article class="article">
                 <web-item-list
                 :items="filteredItems.data"
-                :listTitle="filteredItems.label"
                 ></web-item-list>
             </article>
         </div>

@@ -47,6 +47,11 @@ body{
 @media screen and(min-width: 1200px){
     .container{
         max-width: 1000px;
+    };
+    .section{
+        &.no-margin-top{
+            margin-top: 0;
+        }
     }
 }
 @media screen and(min-width: 1400px){

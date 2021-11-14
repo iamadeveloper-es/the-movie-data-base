@@ -35,7 +35,6 @@ export default {
         this.configView()
     },
     methods: {
-        //FIXME: CONTROLAR SI NO VIENE EL backdrop_path
         configView(){
             const id = this.$route.params.id
             if(this.tvShow){
@@ -52,7 +51,9 @@ export default {
                 .then(response => {
                     this.selectedObject = response
                     Object.assign(this.selectedObject, {title: this.selectedObject.name});
-                    Object.assign(this.selectedObject, {formatedYear: getYear(this.selectedObject.first_air_date)});
+                    Object.assign(this.selectedObject, this.selectedObject.first_air_date ? 
+                        {formatedYear: getYear(this.selectedObject.first_air_date)}
+                        : {formatedYear : ""});
                 })
                 .catch(() => this.serviceError = true)
         },
@@ -60,7 +61,9 @@ export default {
             this.getMovieById(id)
                 .then(response => {
                     this.selectedObject = response;
-                    Object.assign(this.selectedObject, {formatedYear: getYear(this.selectedObject.release_date)});
+                    Object.assign(this.selectedObject, this.selectedObject.release_date ? 
+                        {formatedYear: getYear(this.selectedObject.release_date)}
+                        :{formatedYear: ""});
                 })
                 .catch(() => this.serviceError = true)
         },
