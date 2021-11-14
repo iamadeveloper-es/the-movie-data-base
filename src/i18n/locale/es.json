@@ -39,5 +39,9 @@
         "searchByName": "Buscar por nombre",
         "results" :"Resultados",
         "noResults" :"No hay busquedas"
+    },
+    "empty":{
+        "noResults" : "No se han encontrado resultados, inténtalo de nuevo más tarde :(",
+        "empty" : "No existen resultados para esta busqueda, inténtalo de nuevo"
     }
 }

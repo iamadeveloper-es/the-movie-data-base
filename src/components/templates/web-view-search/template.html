@@ -9,14 +9,34 @@
             </article>
         </div>
     </section>
-    <section class="section">
-        <div class="container">
-            <h2 class="headline-2">{{setTitle}}</h2>
-            <article class="article">
-                <web-item-list
-                :items="filteredItems.data"
-                ></web-item-list>
-            </article>
-        </div>
-    </section>
+    <template
+    v-if="filteredItems.data && filteredItems.data.length"
+    >
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">{{setTitle}}</h2>
+                <article class="article">
+                    <web-item-list
+                    :items="filteredItems.data"
+                    ></web-item-list>
+                </article>
+            </div>
+        </section>
+    </template>
+    <template
+    v-else-if="!filteredItems.data || !filteredItems.data.length"
+    >
+        <web-empty-case
+        :icon="'hourglass_disabled'"
+        :msg="$t('empty.empty')"
+        ></web-empty-case>
+    </template>
+    <template
+    v-else
+    >
+        <web-empty-case
+        :icon="'error_outline'"
+        :msg="$t('empty.noResults')"
+        ></web-empty-case>
+    </template>
 </div>

@@ -1,10 +1,12 @@
 import MixinMultiSearchService from "@/mixin/services/multiSearchService";
 import WebItemList from "@/components/organism/web-item-list";
+import WebEmptyCase from "@/components/organism/web-empty-case";
 import WebFilters from "@/components/organism/web-filters";
 export default {
   name: "web-view-search",
   components: {
     WebItemList,
+    WebEmptyCase,
     WebFilters
   },
   mixins:[

@@ -1,77 +1,89 @@
 <div class="detail">
-    <section class="section no-margin-top">
-        <web-hero
-        v-if="selectedObject"
-        :src="selectedObject.backdrop_path"
-        :fallBackImg="'poster-not-found.jpg'"
-        :altText="selectedObject.title"
-        :width="'w1280'"
-        >
-            <div class="container">
-                <div class="hero-inner__info">
-                    <div class="title">
-                        <h2 class="info__title">{{selectedObject.title}}</h2>
-                    </div>
-                    <div class="genre">
-                        <ul class="genre__ul ul-flex">
-                            <li class="genre__li"
-                                v-for="(item, index) in selectedObject.genres"
-                                :key="index"
-                            >
-                                {{item.name}}
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="actions">
-                        <web-icon-action
-                        v-if="!isUserListItemExistStore(selectedObject.id)"
-                        :icon="'add'"
-                        :iconText="$t('myList.addToList')"
-                        @Clicked="addItemToList(selectedObject)"
-                        ></web-icon-action>
-                        <web-icon-action
-                        v-else
-                        :icon="'remove'"
-                        :iconText="$t('myList.removeFromList')"
-                        @Clicked="deleteItemFromList(selectedObject.id)"
-                        ></web-icon-action>
-                        <web-button
-                        :btnText="$t('buttons.watchTrailer')"
-                        ></web-button>
-                        <web-rating
-                        :average="selectedObject.vote_average"
-                        ></web-rating>
-                    </div>
-                    <div class="info">
-                        <div class="inner__info">
-                            <span>{{selectedObject.formatedYear}}</span>
-                            <span v-if="!tvShow" class="runtime">{{selectedObject.runtime}} <small>{{$t('generalText.minutes')}}</small></span>
-                            <span v-if="tvShow" class="runtime"><small>{{$t('generalText.seasons')}}</small> {{selectedObject.number_of_seasons}}</span>
+    <template
+    v-if="!serviceError"
+    >
+        <section class="section no-margin-top">
+            <web-hero
+            v-if="selectedObject"
+            :src="selectedObject.backdrop_path"
+            :fallBackImg="'poster-not-found.jpg'"
+            :altText="selectedObject.title"
+            :width="'w1280'"
+            >
+                <div class="container">
+                    <div class="hero-inner__info">
+                        <div class="title">
+                            <h2 class="info__title">{{selectedObject.title}}</h2>
                         </div>
-                        <p>{{selectedObject.overview}}</p>
+                        <div class="genre">
+                            <ul class="genre__ul ul-flex">
+                                <li class="genre__li"
+                                    v-for="(item, index) in selectedObject.genres"
+                                    :key="index"
+                                >
+                                    {{item.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="actions">
+                            <web-icon-action
+                            v-if="!isUserListItemExistStore(selectedObject.id)"
+                            :icon="'add'"
+                            :iconText="$t('myList.addToList')"
+                            @Clicked="addItemToList(selectedObject)"
+                            ></web-icon-action>
+                            <web-icon-action
+                            v-else
+                            :icon="'remove'"
+                            :iconText="$t('myList.removeFromList')"
+                            @Clicked="deleteItemFromList(selectedObject.id)"
+                            ></web-icon-action>
+                            <web-button
+                            :btnText="$t('buttons.watchTrailer')"
+                            ></web-button>
+                            <web-rating
+                            :average="selectedObject.vote_average"
+                            ></web-rating>
+                        </div>
+                        <div class="info">
+                            <div class="inner__info">
+                                <span>{{selectedObject.formatedYear}}</span>
+                                <span v-if="!tvShow && selectedObject.runtime" class="runtime">{{selectedObject.runtime}} <small>{{$t('generalText.minutes')}}</small></span>
+                                <span v-if="tvShow && selectedObject.number_of_seasons" class="runtime"><small>{{$t('generalText.seasons')}}</small> {{selectedObject.number_of_seasons}}</span>
+                            </div>
+                            <p>{{selectedObject.overview}}</p>
+                        </div>
                     </div>
                 </div>
+            </web-hero>
+        </section>
+        <section class="section">
+            <div class="container">
+                <article class="article">
+                    <web-item-list
+                    :items="getUserListStore"
+                    :listTitle="$t('headLines.myList')"
+                    ></web-item-list>
+                </article>
             </div>
-        </web-hero>
-    </section>
-    <section class="section">
-        <div class="container">
-            <article class="article">
-                <web-item-list
-                :items="getUserListStore"
-                :listTitle="$t('headLines.myList')"
-                ></web-item-list>
-            </article>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <article class="article">
-                <web-item-list
-                :items="similarList"
-                :listTitle="$t('subheadLines.related')"
-                ></web-item-list>
-            </article>
-        </div>
-    </section>
+        </section>
+        <section class="section">
+            <div class="container">
+                <article class="article">
+                    <web-item-list
+                    :items="similarList"
+                    :listTitle="$t('subheadLines.related')"
+                    ></web-item-list>
+                </article>
+            </div>
+        </section>
+    </template>
+    <template
+        v-else
+    >
+        <web-empty-case
+        :icon="'error_outline'"
+        :msg="$t('empty.noResults')"
+        ></web-empty-case>
+    </template>
 </div>
